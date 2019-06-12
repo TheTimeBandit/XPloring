@@ -44,11 +44,11 @@ class TestLook(unittest.TestCase):
         with contextlib.redirect_stdout(stdout):
             self.ih1.handle_user_input("look")
         result_output = stdout.getvalue()
-        expected_output = "Entrance room. Your journey to freedom begins here.\n" \
+        expected_output = "- Entrance room -\nYour journey to freedom begins here.\n\n" \
                           "There is a key. This key opens armory door.\n" \
                           "There is a key. This key opens kitchen door.\n" \
                           "There are no enemies around.\n" \
-                          "The crossroad is to the NORTH.\n"
+                          "The crossroad room is to the NORTH.\n"
         self.assertEqual(expected_output, result_output)
 
     def test_look_crossroad(self):
@@ -57,11 +57,11 @@ class TestLook(unittest.TestCase):
         with contextlib.redirect_stdout(stdout):
             self.ih1.handle_user_input("look")
         result_output = stdout.getvalue()
-        expected_output = "Crossroad room. A room with 3 doors\n" \
+        expected_output = "- Crossroad room -\nA room with 3 doors\n\n" \
                           "There are no enemies around.\n" \
                           "There is a armory door to the WEST.\n" \
                           "There is a kitchen door to the EAST.\n" \
-                          "The entrance is to the SOUTH.\n"
+                          "The entrance room is to the SOUTH.\n"
         self.assertEqual(expected_output, result_output)
 
     def test_look_game0_entrance(self):
@@ -69,7 +69,7 @@ class TestLook(unittest.TestCase):
         with contextlib.redirect_stdout(stdout):
             self.ih.handle_user_input("look")
         result_output = stdout.getvalue()
-        expected_output = "Entrance room. Entrance room, there are some things laying around in the room.\n" \
+        expected_output = "- Entrance room -\nThere are some things just laying around in the room.\n\n" \
                           "There is a envelope. OPEN to get letter from inside.\n" \
                           "There is a sword. Sword made of pure silver with a straight double-edged blade and a grip for two-handed use.\n" \
                           "There is a bandage. You can USE bandage to reduce swelling or slow heavy bleeding.\n" \
