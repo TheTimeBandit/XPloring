@@ -1,5 +1,4 @@
 class Hero:
-
     hero_actions = {
         "look": {
             "command_show_room": None
@@ -14,6 +13,7 @@ class Hero:
 
     def __init__(self, data: dict):
         self.health = data['health']
+        self.max_health = data['max_health']
         self.base_damage = data['base_damage']
         self.location = data['location']
         self.weapon_slot = data['weapon_slot']
@@ -23,5 +23,3 @@ class Hero:
         self.inventory = data['inventory']
         self.actions = self.hero_actions.copy()
         self.actions.update(data['actions'])
-
-

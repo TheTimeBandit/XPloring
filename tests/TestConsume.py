@@ -4,7 +4,7 @@ import unittest
 
 from InputHandler import InputHandler
 from GameState import GameState
-from game_item.Room import Room
+from game_items.Room import Room
 
 
 class TestConsume(unittest.TestCase):
@@ -13,10 +13,6 @@ class TestConsume(unittest.TestCase):
         self.map0 = '../game_states/game0_repr.json'
         self.game_state = GameState(self.map0)
         self.ih = InputHandler(self.game_state)
-
-        self.map_two_helmets = '../game_states/game_two_helmets.json'
-        self.game_two_helmets = GameState(self.map_two_helmets)
-        self.ih_two_helmets = InputHandler(self.game_two_helmets)
 
         self.map1 = '../game_states/game1_cake.json'
         self.game_state1 = GameState(self.map1)

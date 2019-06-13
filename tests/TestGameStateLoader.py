@@ -1,17 +1,16 @@
 import unittest
 
 from GameStateLoader import GameStateLoader
-from game_item.Armour import Armour
-from game_item.Consumable import Consumable
-from game_item.Creature import Creature
-from game_item.Hero import Hero
-from game_item.Item import Item
-from game_item.Room import Room
-from game_item.Weapon import Weapon
+from game_items.Armour import Armour
+from game_items.Consumable import Consumable
+from game_items.Creature import Creature
+from game_items.Hero import Hero
+from game_items.Item import Item
+from game_items.Room import Room
+from game_items.Weapon import Weapon
 
 
 class TestGameStateLoader(unittest.TestCase):
-
     file_path = "../game_states/game_test_loader.json"
     game_data = GameStateLoader.read_file(file_path)
     loader = GameStateLoader(game_data)
@@ -28,9 +27,9 @@ class TestGameStateLoader(unittest.TestCase):
         self.assertDictEqual(
             {
                 "west":
-                {
-                    "room_id": "#room2"
-                }
+                    {
+                        "room_id": "#room2"
+                    }
             },
             room1.directions
         )
@@ -43,9 +42,9 @@ class TestGameStateLoader(unittest.TestCase):
         self.assertDictEqual(
             {
                 "east":
-                {
-                     "room_id": "#room1"
-                }
+                    {
+                        "room_id": "#room1"
+                    }
             },
             room2.directions
         )
@@ -84,17 +83,18 @@ class TestGameStateLoader(unittest.TestCase):
         self.assertListEqual(["regular item 1"], item1.alias)
         self.assertDictEqual(
             {
-                "open": {
-                    "command_spawn_items": ["#item2"]
+                "drop": {
+                    "command_drop_item": None
                 },
                 "examine": {
                     "command_show_description": None
                 },
-                "take": {
-                    "command_add_items_to_inventory": None
+                "open": {
+                    "command_spawn_items": ["#item2"]
                 },
-                "drop": {
-                    "command_drop_item": None
+                "take": {
+                    "command_add_items_to_inventory": None,
+                    "command_despawn_items": None
                 }
             }, item1.actions
         )
@@ -105,18 +105,19 @@ class TestGameStateLoader(unittest.TestCase):
         self.assertListEqual(["consumable item 2"], item2.alias)
         self.assertDictEqual(
             {
-                "use": {
-                    "command_required_items": ["#item1"],
-                    "command_consume_item": True
+                "drop": {
+                    "command_drop_item": None
                 },
                 "examine": {
                     "command_show_description": None
                 },
                 "take": {
-                    "command_add_items_to_inventory": None
+                    "command_add_items_to_inventory": None,
+                    'command_despawn_items': None
                 },
-                "drop": {
-                    "command_drop_item": None
+                "use": {
+                    "command_required_items": ["#item1"],
+                    "command_consume_item": True
                 }
             }, item2.actions
         )
@@ -146,6 +147,7 @@ class TestGameStateLoader(unittest.TestCase):
         hero = self.loader.create_hero()
         self.assertIsInstance(hero, Hero)
         self.assertEqual(100, hero.health)
+        self.assertEqual(100, hero.max_health)
         self.assertEqual("#room1", hero.location)
         self.assertEqual("#weapon1", hero.weapon_slot)
         self.assertEqual("#armour1", hero.head_slot)

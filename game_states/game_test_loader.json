@@ -70,7 +70,9 @@
         ],
         "actions": {
           "open": {
-            "command_spawn_items": ["#item2"]
+            "command_spawn_items": [
+              "#item2"
+            ]
           }
         }
       }
@@ -84,7 +86,9 @@
         ],
         "actions": {
           "use": {
-            "command_required_items": ["#item1"],
+            "command_required_items": [
+              "#item1"
+            ],
             "command_consume_item": true
           }
         }
@@ -98,7 +102,6 @@
           "weapon equipment"
         ],
         "slot": "weapon_slot",
-
         "damage": 50,
         "description": "Weapon Equipment",
         "actions": {}
@@ -112,7 +115,6 @@
         "slot": "head_slot",
         "resistance": 5,
         "durability": 10,
-
         "description": "Armour Equipment",
         "actions": {}
       }
@@ -122,6 +124,7 @@
   },
   "hero": {
     "health": 100,
+    "max_health": 100,
     "base_damage": 1,
     "location": "#room1",
     "weapon_slot": "#weapon1",
