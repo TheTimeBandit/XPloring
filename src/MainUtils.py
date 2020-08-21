@@ -1,7 +1,7 @@
 from os import listdir
 from os.path import isfile, join
 
-parent_path = '..\\game_states'
+parent_path = 'game_states'
 
 
 def get_config_files():

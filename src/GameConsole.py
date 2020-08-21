@@ -1,9 +1,8 @@
 import re
 
-from Game import Game
-from GameState import GameState
-from GameStateSaver import GameStateSaver
-
+from src.Game import Game
+from src.GameState import GameState
+from src.GameStateSaver import GameStateSaver
 
 class GameConsole(Game):
 

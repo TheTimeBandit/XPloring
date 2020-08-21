@@ -1,6 +1,5 @@
-from GameStateLoader import GameStateLoader
-from exceptions.GameStateFileException import GameStateFileException
-
+from src.GameStateLoader import GameStateLoader
+from src.exceptions.GameStateFileException import GameStateFileException
 
 class GameState:
 

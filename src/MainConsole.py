@@ -1,7 +1,7 @@
-import MainUtils
-from GameConsole import GameConsole
-from exceptions.GameStateFileException import GameStateFileException
+from src import MainUtils
+from src.GameConsole import GameConsole
 from src.GameState import GameState
+from src.exceptions.GameStateFileException import GameStateFileException
 
 
 def run():

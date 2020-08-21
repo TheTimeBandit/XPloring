@@ -2,15 +2,15 @@ import json
 from json import JSONDecodeError
 from typing import Dict
 
-from exceptions.GameStateFileException import GameStateFileException
-from game_items.Armour import Armour
-from game_items.Consumable import Consumable
-from game_items.Creature import Creature
-from game_items.Hero import Hero
-from game_items.Item import Item
-from game_items.Room import Room
-from game_items.TransitionObject import TransitionObject
-from game_items.Weapon import Weapon
+from src.exceptions.GameStateFileException import GameStateFileException
+from src.game_items.Armour import Armour
+from src.game_items.Consumable import Consumable
+from src.game_items.Creature import Creature
+from src.game_items.Hero import Hero
+from src.game_items.Item import Item
+from src.game_items.Room import Room
+from src.game_items.TransitionObject import TransitionObject
+from src.game_items.Weapon import Weapon
 
 
 class GameStateLoader:

@@ -1,6 +1,6 @@
 import unittest
 
-from GameState import GameState
+from src.GameState import GameState
 from src.InputHandler import InputHandler
 
 

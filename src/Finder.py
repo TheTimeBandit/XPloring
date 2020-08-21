@@ -1,6 +1,6 @@
-from GameState import GameState
-from game_items.Room import Room
-from game_items.TransitionObject import TransitionObject
+from src.GameState import GameState
+from src.game_items.Room import Room
+from src.game_items.TransitionObject import TransitionObject
 
 
 class Finder:
