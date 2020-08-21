@@ -95,7 +95,7 @@
   "items": {
     "regular": {
       "#item_doorkey_armory": {
-        "description": "This key opens armory door",
+        "description": "This key opens the armory door",
         "alias": [
           "key",
           "armory key"
@@ -103,7 +103,7 @@
         "actions": {}
       },
       "#item_doorkey_kitchen": {
-        "description": "This key opens kitchen door",
+        "description": "This key opens the kitchen door",
         "alias": [
           "key",
           "kitchen key"
@@ -111,7 +111,7 @@
         "actions": {}
       },
       "#item_doorkey_exit": {
-        "description": "This key opens heavy metal door",
+        "description": "This key opens the heavy metal door",
         "alias": [
           "key",
           "heavy metal door key"
@@ -121,7 +121,7 @@
     },
     "consumable": {
       "#item_cake": {
-        "description": "A cake with cherry on top",
+        "description": "A cake with a cherry on top",
         "value": -15,
         "alias": [
           "cake"
@@ -132,7 +132,7 @@
             "command_spawn_items": [
               "#item_doorkey_exit"
             ],
-            "command_show_message": "You found key. This key opens heavy metal door"
+            "command_show_message": "You found a key. This key opens the heavy metal door"
           }
         }
       }
